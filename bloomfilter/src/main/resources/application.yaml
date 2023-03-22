@@ -1,0 +1,26 @@
+# DataSource Config
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/tempa?serverTimezone=GMT%2B8&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: 123456
+  redis:
+    host: 1.13.197.192
+    port: 6379
+    password: 123456789Ykd
+    database: 0
+
+#日志格式
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+
+#自己写的mapper路径
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 88
