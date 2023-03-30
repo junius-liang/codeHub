@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bloomfilter/bloomfilter.iml" filepath="$PROJECT_DIR$/bloomfilter/bloomfilter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/codeHub.iml" filepath="$PROJECT_DIR$/.idea/codeHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redisDistributeLock/redisDistributeLock.iml" filepath="$PROJECT_DIR$/redisDistributeLock/redisDistributeLock.iml" />
     </modules>
   </component>
 </project>

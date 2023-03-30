@@ -34,9 +34,5 @@ public class CustomerController {
         return customerService.get(id);
     }
 
-    @GetMapping("/init")
-    public void initCustomer() throws IOException {
-        bloomFilterInit.init();
-    }
 
 }

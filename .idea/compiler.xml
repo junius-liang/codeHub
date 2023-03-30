@@ -8,15 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bloomfilter" />
+        <module name="redisDistributeLock" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bloomfilter" target="1.8" />
+      <module name="redisDistributeLock" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bloomfilter" options="-parameters" />
+      <module name="redisDistributeLock" options="-parameters" />
     </option>
   </component>
 </project>

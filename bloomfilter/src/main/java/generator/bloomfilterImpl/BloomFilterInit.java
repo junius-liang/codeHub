@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author junius
@@ -25,7 +26,8 @@ public class BloomFilterInit {
     private static final Logger LOGGER = LoggerFactory.getLogger(BloomFilterInit.class);
 
 
-    public void init() throws IOException {
+    public void init() throws IOException, InterruptedException {
+        TimeUnit.SECONDS.sleep(3);
         //读取白名单配置文件
         Properties properties = new Properties();
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("whiteListCustomer.properties");
@@ -40,5 +42,21 @@ public class BloomFilterInit {
             LOGGER.info(key+":::::"+index);
             redisTemplate.opsForValue().setBit("WHITE_LIST_CUSTOMER",index,true);
         });
+    }
+
+
+    @PostConstruct
+    public void init2(){
+        new Thread(() -> {
+            try {
+                init();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        System.out.println("PostConstruct 执行完毕");
     }
 }
