@@ -1,6 +1,7 @@
 package com.app.service;
 
 import cn.hutool.core.util.IdUtil;
+import com.app.lock.LockFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,11 +28,14 @@ public class InventoryService
     private StringRedisTemplate stringRedisTemplate;
     @Value("${server.port}")
     private String port;
-    private Lock lock = new ReentrantLock();
+
+    @Autowired
+    private LockFactory lockFactory;
 
     // JVM级别的锁
     public String redisLock0()
     {
+        Lock lock = new ReentrantLock();
         String retMessage = "";
         lock.lock();
         try
@@ -231,6 +235,7 @@ public class InventoryService
                 retMessage = "商品卖完了，o(╥﹏╥)o";
                 System.out.println(retMessage);
             }
+
         }finally {
 //            使用lua脚本变为原子操作
 //            if (Objects.requireNonNull(stringRedisTemplate.opsForValue().get(lockName)).equalsIgnoreCase(curThreadId)){
@@ -250,6 +255,30 @@ public class InventoryService
      * 可重入锁+设计模式
      */
     public void redisLock6(){
+        Lock lock = lockFactory.getLockByFactory("redis");
+        String retMessage = "";
+        lock.lock();
+        try
+        {
+            lock.lock();
+            System.out.println("-------------------");
+            lock.unlock();
+            //1 查询库存信息
+            String result = stringRedisTemplate.opsForValue().get("inventory001");
+            //2 判断库存是否足够
+            Integer inventoryNumber = result == null ? 0 : Integer.parseInt(result);
+            //3 扣减库存
+            if(inventoryNumber > 0) {
+                stringRedisTemplate.opsForValue().set("inventory001",String.valueOf(--inventoryNumber));
+                retMessage = "成功卖出一个商品，库存剩余: "+inventoryNumber;
+                System.out.println(retMessage);
+            }else{
+                retMessage = "商品卖完了，o(╥﹏╥)o";
+            }
+
+        }finally {
+            lock.unlock();
+        }
 
     }
 

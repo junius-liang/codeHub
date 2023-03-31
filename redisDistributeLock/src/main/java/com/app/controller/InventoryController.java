@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author junius
  * @date 2023/03/30 13:25
@@ -21,10 +23,9 @@ public class InventoryController
 
     @ApiOperation("扣减库存，一次卖一个")
     @GetMapping(value = "/inventory/sale")
-    public void sale()
-    {
-        for (int i = 0; i < 1000; i++) {
-            inventoryService.redisLock5();
-        }
+    public void sale() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(40);
+                inventoryService.redisLock6();
+
     }
 }
