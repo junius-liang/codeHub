@@ -7,19 +7,34 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="rocketmqDemo" />
+        <module name="chatgptDemo" />
+        <module name="nettyDemo" />
+        <module name="springSecurity1" />
+        <module name="springSecurity2" />
         <module name="bloomfilter" />
         <module name="redisDistributeLock" />
+        <module name="redisCSFramework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bloomfilter" target="1.8" />
+      <module name="chatgptDemo" target="1.8" />
+      <module name="nettyDemo" target="1.8" />
+      <module name="redisCSFramework" target="1.8" />
       <module name="redisDistributeLock" target="1.8" />
+      <module name="rocketmqDemo" target="1.8" />
+      <module name="springSecurity1" target="1.8" />
+      <module name="springSecurity2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="bloomfilter" options="-parameters" />
       <module name="redisDistributeLock" options="-parameters" />
+      <module name="rocketmqDemo" options="-parameters" />
+      <module name="springSecurity1" options="-parameters" />
+      <module name="springSecurity2" options="-parameters" />
     </option>
   </component>
 </project>

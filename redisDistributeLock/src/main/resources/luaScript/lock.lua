@@ -5,3 +5,8 @@
                 "else " +
                         "return 0 " +
                 "end"
+
+private String lockName;//KEYS[1]--JuniusRedisLock
+    private String uuidValue;//ARGV[1]
+    private long   expireTime;//ARGV[2]
+

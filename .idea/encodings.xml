@@ -3,5 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/bloomfilter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/redisDistributeLock/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rocketmqDemo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springSecurity1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springSecurity2/src/main/java" charset="UTF-8" />
   </component>
 </project>

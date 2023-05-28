@@ -3,8 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/bloomfilter/bloomfilter.iml" filepath="$PROJECT_DIR$/bloomfilter/bloomfilter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chatgptDemo/chatgptDemo.iml" filepath="$PROJECT_DIR$/chatgptDemo/chatgptDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/codeHub.iml" filepath="$PROJECT_DIR$/.idea/codeHub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nettyDemo/nettyDemo.iml" filepath="$PROJECT_DIR$/nettyDemo/nettyDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redisCSFramework/redisCSFramework.iml" filepath="$PROJECT_DIR$/redisCSFramework/redisCSFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/redisDistributeLock/redisDistributeLock.iml" filepath="$PROJECT_DIR$/redisDistributeLock/redisDistributeLock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rocketmqDemo/rocketmqDemo.iml" filepath="$PROJECT_DIR$/rocketmqDemo/rocketmqDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springSecurity1/springSecurity1.iml" filepath="$PROJECT_DIR$/springSecurity1/springSecurity1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springSecurity2/springSecurity2.iml" filepath="$PROJECT_DIR$/springSecurity2/springSecurity2.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace为命名空间，一般就是mapper所对应DAO接口的全称-->
+<mapper namespace="com.app.dao.UserDao">
+
+
+    <select id="getUserByUserName" resultType="SysUser">
+        select * from user where user_name=#{userName}
+    </select>
+
+    <select id="getUserMenuList" resultType="java.lang.String">
+        select distinct sm.code from sys_role_user sru
+            inner join sys_role_menu srm on sru.rid=srm.rid
+            inner join menu sm on srm.mid=sm.id where sru.uid=#{userId}
+    </select>
+</mapper>

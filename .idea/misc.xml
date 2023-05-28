@@ -10,6 +10,12 @@
       <list>
         <option value="$PROJECT_DIR$/bloomfilter/pom.xml" />
         <option value="$PROJECT_DIR$/redisDistributeLock/pom.xml" />
+        <option value="$PROJECT_DIR$/redisCSFramework/pom.xml" />
+        <option value="$PROJECT_DIR$/springSecurity1/pom.xml" />
+        <option value="$PROJECT_DIR$/springSecurity2/pom.xml" />
+        <option value="$PROJECT_DIR$/nettyDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/rocketmqDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/chatgptDemo/pom.xml" />
       </list>
     </option>
   </component>
